@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Selection - Premium Vehicles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px 0;
+      }
+      .container-fluid {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        padding: 40px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+      }
+      .product-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #dee2e6;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+      .form-select {
+        border-radius: 8px;
+        border: 2px solid #667eea;
+        padding: 10px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+      .form-select:focus {
+        border-color: #764ba2;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+      }
+      #img_1, #img_2 {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        object-fit: cover;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+      }
+      li {
+        padding: 8px 0;
+        border-bottom: 1px solid #dee2e6;
+        color: #555;
+        font-weight: 500;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      button {
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-radius: 50%;
+        background: #667eea;
+        border: none;
+        color: white;
+        transition: background 0.3s ease;
+      }
+      button:hover {
+        background: #764ba2;
+      }
+      .dropdown-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .dropdown-row .form-group {
+        flex: 1;
+        margin-bottom: 0;
+      }
+      .dropdown-row label {
+        margin-bottom: 5px;
+        display: block;
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>❄️ Select Your Favorite AC</h1>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="product-card">
+          <div class="dropdown-row">
+            <div class="form-group">
+              <label for="pro_1" class="form-label fw-bold">AC Brand</label>
+              <select name="product1" id="pro_1" class="form-select" onchange="product('1')">
+                <option value="">Select Brand</option>
+                <option value="Daikin">Daikin</option>
+                <option value="LG">LG</option>
+                <option value="Samsung">Samsung</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="model_1" class="form-label fw-bold">Model</label>
+              <select name="model1" id="model_1" class="form-select" onchange="product('1')">
+                <option value="">Select Model</option>
+                <option value="1.5Ton">1.5 Ton</option>
+                <option value="2Ton">2 Ton</option>
+                <option value="2.5Ton">2.5 Ton</option>
+              </select>
+            </div>
+          </div>
+          <img src="" id="img_1" alt="Product Image" width="100%" height="250px" class="mt-4">
+          <ul id="Details_1"></ul>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="product-card">
+          <div class="dropdown-row">
+            <div class="form-group">
+              <label for="pro_2" class="form-label fw-bold">AC Brand</label>
+              <select name="product2" id="pro_2" class="form-select" onchange="product('2')">
+                <option value="">Select Brand</option>
+                <option value="Daikin">Daikin</option>
+                <option value="LG">LG</option>
+                <option value="Samsung">Samsung</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="model_2" class="form-label fw-bold">Model</label>
+              <select name="model2" id="model_2" class="form-select" onchange="product('2')">
+                <option value="">Select Model</option>
+                <option value="1.5Ton">1.5 Ton</option>
+                <option value="2Ton">2 Ton</option>
+                <option value="2.5Ton">2.5 Ton</option>
+              </select>
+            </div>
+          </div>
+          <img src="" id="img_2" alt="Product Image" width="100%" height="250px" class="mt-4">
+          <ul id="Details_2"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script>
+    const productData = {
+      Daikin: {
+        "1.5Ton": {
+          img: "Daikin1.5.jpg",
+          details: "<li><strong>Model:</strong> Inverter 1.5 Ton</li><li><strong>Cooling Capacity:</strong> 5000 BTU</li><li><strong>Price:</strong> $450</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2Ton": {
+          img: "Daikin2.jpg",
+          details: "<li><strong>Model:</strong> Inverter 2 Ton</li><li><strong>Cooling Capacity:</strong> 6500 BTU</li><li><strong>Price:</strong> $550</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2.5Ton": {
+          img: "Daikin2.5.jpg",
+          details: "<li><strong>Model:</strong> Inverter 2.5 Ton</li><li><strong>Cooling Capacity:</strong> 8000 BTU</li><li><strong>Price:</strong> $650</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        }
+      },
+      LG: {
+        "1.5Ton": {
+          img: "LG1.5.jpg",
+          details: "<li><strong>Model:</strong> Smart Inverter 1.5 Ton</li><li><strong>Cooling Capacity:</strong> 5000 BTU</li><li><strong>Price:</strong> $400</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2Ton": {
+          img: "LG2.jpg",
+          details: "<li><strong>Model:</strong> Smart Inverter 2 Ton</li><li><strong>Cooling Capacity:</strong> 6500 BTU</li><li><strong>Price:</strong> $500</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2.5Ton": {
+          img: "LG2.5.jpg",
+          details: "<li><strong>Model:</strong> Smart Inverter 2.5 Ton</li><li><strong>Cooling Capacity:</strong> 8000 BTU</li><li><strong>Price:</strong> $600</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        }
+      },
+      Samsung: {
+        "1.5Ton": {
+          img: "Samsung1.5.jpg",
+          details: "<li><strong>Model:</strong> WindFree 1.5 Ton</li><li><strong>Cooling Capacity:</strong> 5000 BTU</li><li><strong>Price:</strong> $420</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2Ton": {
+          img: "Samsung2.jpg",
+          details: "<li><strong>Model:</strong> WindFree 2 Ton</li><li><strong>Cooling Capacity:</strong> 6500 BTU</li><li><strong>Price:</strong> $520</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        },
+        "2.5Ton": {
+          img: "Samsung2.5.jpg",
+          details: "<li><strong>Model:</strong> WindFree 2.5 Ton</li><li><strong>Cooling Capacity:</strong> 8000 BTU</li><li><strong>Price:</strong> $620</li><li><strong>Energy Rating:</strong> 5 Star</li>"
+        }
+      }
+    };
+
+    function product(productNumber) {
+      const selectId = "pro_" + productNumber;
+      const modelId = "model_" + productNumber;
+      const imgId = "img_" + productNumber;
+      const detailsId = "Details_" + productNumber;
+      
+      const brand = document.getElementById(selectId).value;
+      const model = document.getElementById(modelId).value;
+      
+      if (brand === "" || model === "") {
+        document.getElementById(imgId).src = "";
+        document.getElementById(detailsId).innerHTML = "";
+      } else if (productData[brand] && productData[brand][model]) {
+        document.getElementById(imgId).src = productData[brand][model].img;
+        document.getElementById(detailsId).innerHTML = productData[brand][model].details;
+      }
+    }
+    </script>
+</body>
+</html>
