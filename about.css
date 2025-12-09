@@ -85,13 +85,88 @@ body{
 
 /* nav end */
 
+body{
+    background-color: #ffffff;
+}
 
 
+ .about-heading{
+    text-align: center;
+ }
+
+ .about-heading h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #022445;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+    padding: 7% 0;
+ }
+
+ .about-heading h1::before{
+    content: "-:";
+    margin-right: 8px;
+    color: #046ff2;
+}
+
+.about-heading h1::after{
+    content: ":-";
+    margin-left: 8px;
+    color: #046ff2;
+}
+
+.about-left-heading{
+    text-align: center;
+}
+
+.about-left-heading h2{
+    position: relative;
+        display: inline-block;
+        color: #022445;
+        margin-bottom: 2rem;
+        font-size: 40px;
+        margin: 5%;
+}
+
+.about-left-heading h2::before{
+    content: '';
+    position: absolute;
+    top: 130%;
+    left: 11%;
+    width: 10rem;
+    border-radius: 30px;
+    height: 4px;
+    background: #046ff2;
+}
+
+.about-right-heading{
+    text-align: center;
+}
+
+.about-right-heading h2{
+    position: relative;
+        display: inline-block;
+        color: #022445;
+        margin-bottom: 2rem;
+        font-size: 40px;
+        margin: 5%;
+}
+
+.about-right-heading h2::before{
+    content: '';
+    position: absolute;
+    top: 130%;
+    left: 14%;
+    width: 13rem;
+    border-radius: 30px;
+    height: 4px;
+    background: #046ff2;
+}
 
 /* About Section */
         .about-main {
-            padding: 0 20px;
-            background: #edf6ff;
+            padding: 0 7%;
             display: flex;
             justify-content: center;
             gap: 4rem;
@@ -99,45 +174,79 @@ body{
         }
         .about-left{
             width: 40%;
-            height: auto;
-            min-height: 300px;
+
+            text-align: start;
+        }
+
+        .about-left p{
+            letter-spacing: 0.3px;
+            width: 100%;
         }
 
         .about-right{
             width: 40%;
-            height: auto;
-            min-height: 300px;
+            
+            border-radius: 20px;
+
         }
 
         .about-right img{
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
         }
 
-        .about h2 {
-            font-size: 2.5em;
-            color: #1e88e5;
-            margin-bottom: 20px;
+        @media(max-width:1000px){
+            .about-main{
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                padding: 0 7%;
+            }
+
+            .about-left , .about-right{
+                width: 90%;
+                margin-top: 10px;
+            }
         }
 
-        .about p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: auto;
-        }
+        
+
+
+        
 
         /* Services Section */
-        .services {
-            background: #edf6ff;
-            padding: 80px 20px;
+
+        .service-heading{
             text-align: center;
         }
 
-        .services h2 {
-            font-size: 40px;
-            color: #022445;
-            margin-bottom: 50px;
+        .service-heading h2{
+             position: relative;
+        display: inline-block;
+        color: #022445;
+        margin-bottom: 2rem;
+        font-size: 40px;
+        margin: 5%;
+        }
+
+        .service-heading h2::before{
+            content: '';
+    position: absolute;
+    top: 130%;
+    left: 11%;
+    width: 11rem;
+    border-radius: 30px;
+    height: 4px;
+    background: #046ff2;
+        }
+
+        .services {
+            padding: 80px 20px;
+            text-align: center;
         }
 
         .service-cards {
@@ -152,7 +261,7 @@ body{
             padding: 30px;
             border-radius: 20px;
             width: 250px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
         }
 

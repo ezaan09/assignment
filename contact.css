@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #edf6ff;
+    background: #ffffff;
 }
 
 .nav-main{
@@ -89,7 +89,6 @@ body{
 
 .contact-heading {
     text-align: center;
-    background: #edf6ff;
 }
 
 .contact-heading h1 {
@@ -139,7 +138,6 @@ body{
 
     .info-grid {
       display: grid;
-      background: #edf6ff;
       grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
       gap: 1rem;
       padding-top: 10px;
@@ -156,13 +154,12 @@ body{
       background: #edf6ff;
       padding: 5%;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
 
     .card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+    transform: scale(1.03); 
 }
 
 
@@ -198,7 +195,7 @@ body{
       width: 100%;
       max-width: 500px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
     form label{
